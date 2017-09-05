@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jasypt</groupId>
+	<artifactId>jasypt-parent</artifactId>
+	<version>1.9.3</version>
+	<packaging>pom</packaging>
+
+	<properties>
+	<!-- Dependencies -->
+	<!--all-->
+	<logback.version>0.9.21</logback.version>
+    </properties>
+
+
+
+
+
+	<build>
+		<plugins>
+			<!-- cobertura -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<!-- <version>2.6</version> -->
+				<configuration>
+					<formats>
+						<format>html</format>
+						<format>xml</format>
+					</formats>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal> clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- findbugs -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<xmlOutput>true</xmlOutput>
+					<!-- Optional directory to put findbugs xdoc xml report -->
+					<xmlOutputDirectory>target/site</xmlOutputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+ 	<repositories>
+		<repository>
+			<id>cxy</id>
+			<url>http://nexus.oa.yitopapp.com/content/repositories/cxy</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>cxy</id>
+			<url>http://nexus.oa.yitopapp.com/content/repositories/cxy</url>
+		</repository>
+	</distributionManagement> 
+
+	<modules>
+		<module>jasypt</module>
+		<module>jasypt-acegisecurity</module>
+		<module>jasypt-dist</module>
+		<module>jasypt-hibernate3</module>
+		<module>jasypt-hibernate4</module>
+		<module>jasypt-spring2</module>
+		<module>jasypt-spring3</module>
+		<module>jasypt-spring3-testapp</module> 
+		<module>jasypt-spring31</module>
+		<module>jasypt-spring31-testapp</module>
+		<module>jasypt-springsecurity2</module> 
+		<module>jasypt-springsecurity3</module> 
+		<module>jasypt-wicket13</module> 
+		<module>jasypt-wicket15</module> 
+	</modules>
+</project>
